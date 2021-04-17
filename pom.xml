@@ -6,11 +6,19 @@
 
     <groupId>groupId</groupId>
     <artifactId>zx-security-cloud</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>security</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+        <lombook.version>1.18.6</lombook.version>
+        <mybatis-plus.version>3.1.2</mybatis-plus.version>
+        <springcloud-oauth2.version>2.1.2.RELEASE</springcloud-oauth2.version>
     </properties>
     
 </project>
