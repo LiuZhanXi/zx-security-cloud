@@ -1,2 +1,8 @@
 server:
   port: 10000
+
+lzx:
+  idgenerator:
+    mode: snowflake
+    datacenter: 1
+    worker: 1
