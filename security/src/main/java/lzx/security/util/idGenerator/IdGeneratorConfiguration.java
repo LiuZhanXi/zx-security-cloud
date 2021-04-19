@@ -22,7 +22,7 @@ public class IdGeneratorConfiguration {
 
 	@Bean("idGenerator")
 	@ConditionalOnProperty(name = "lzx.idgenerator.mode", havingValue = "snowflake")
-	public SnowIdUtil snowflakeIdGenerator() {
-		return new SnowIdUtil(datacenter, worker);
+	public IdGenerator snowflakeIdGenerator() {
+		return new SnowIdGenerator(worker, datacenter);
 	}
 }

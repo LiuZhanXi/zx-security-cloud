@@ -17,17 +17,32 @@
     </properties>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>8</source>
+                <target>8</target>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <mainClass>lzx.security.SecurityApplication</mainClass>
+                <layout>ZIP</layout>
+            </configuration>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -39,6 +54,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hibernate.validator</groupId>
+                    <artifactId>hibernate-validator</artifactId>
+                </exclusion>
+            </exclusions>
             <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
@@ -52,16 +73,47 @@
             <version>${spring-boot.version}</version>
         </dependency>
 
-        <!-- security-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring-boot.version}</version>
+            <optional>true</optional>
         </dependency>
-<!--         mybatis plus -->
+
+        <!-- security-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--            <version>${security.version}</version>-->
+<!--        </dependency>-->
+        <!-- mybatis plus -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-core</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+        <!--hutool-all-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.3.10</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.hibernate</groupId>-->
+<!--            <artifactId>hibernate-validator</artifactId>-->
+<!--            <version>7.0.1.Final</version>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

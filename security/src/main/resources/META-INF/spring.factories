@@ -1,7 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.seaboxdata.commons.id.IdGeneratorConfiguration,\
-  com.seaboxdata.commons.exception.ExceptionHandlerConfiguration,\
-  com.seaboxdata.commons.utils.RedisConfig,\
-  com.seaboxdata.commons.utils.RedisUtil,\
-  com.seaboxdata.commons.log.LoggingMvcConfig
+  lzx.security.util.idGenerator.IdGeneratorConfiguration,\
+  lzx.security.util.mybatisPlus.MybtisPlusConfiguration
 
