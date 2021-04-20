@@ -30,7 +30,7 @@ public class Base64Util {
 		}
 		String s = null;
 		try {
-			s = Arrays.toString(Base64.encodeBase64(origin.getBytes(StandardCharsets.UTF_8)));
+			s = Base64.encodeBase64String(origin.getBytes(StandardCharsets.UTF_8));
 		} catch (Exception e) {
 			log.error("Base64加密异常:", e);
 			e.printStackTrace();
@@ -50,7 +50,7 @@ public class Base64Util {
 		}
 		String s = null;
 		try {
-			s = Arrays.toString(Base64.decodeBase64(origin.getBytes(StandardCharsets.UTF_8)));
+			s = new  String(Base64.decodeBase64(origin));
 		} catch (Exception e) {
 			log.error("Base64解密异常:", e);
 			e.printStackTrace();
