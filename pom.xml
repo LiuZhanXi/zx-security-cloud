@@ -20,6 +20,8 @@
         <mybatis-plus.version>3.1.2</mybatis-plus.version>
         <security.version>2.1.4.RELEASE</security.version>
         <mysql.version>8.0.15</mysql.version>
+        <bouncycastle.version>1.60</bouncycastle.version>
+        <oauth2.version>2.1.2.RELEASE</oauth2.version>
     </properties>
     
 </project>

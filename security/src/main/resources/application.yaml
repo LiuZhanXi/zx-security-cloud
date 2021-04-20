@@ -2,6 +2,8 @@ server:
   port: 10000
 
 lzx:
+  aes:
+  value: lzx
   idgenerator:
     mode: snowflake
     datacenter: 1
