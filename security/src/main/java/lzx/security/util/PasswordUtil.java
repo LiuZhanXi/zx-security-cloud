@@ -5,6 +5,7 @@ import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Component;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -23,10 +24,11 @@ import java.security.interfaces.RSAPublicKey;
  * @Author liuzhanxi
  */
 @Slf4j
+@Component
 public class PasswordUtil implements PasswordEncoder {
 
 
-	@Value("${lzx.aes.value}")
+	@Value("${lzx.aes.value:lzx}")
 	private String encodeRules;
 
 	private static final String AES = "AES";
